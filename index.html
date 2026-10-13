@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NeutronMP 论文在线阅读</title>
+    
+    <!-- 优化3: 补充分享与SEO元信息 -->
+    <meta name="description" content="NeutronMP: 基于多模型并行的分布式GNN训练系统，消除同步屏障，实现1.35倍端到端加速。">
+    <meta property="og:title" content="NeutronMP 论文在线阅读">
+    <meta property="og:description" content="Multi-Model Parallelism for Breaking Synchronization Barriers in Distributed GNN Training">
+    <meta property="og:type" content="article">
+
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #f5f6f7; display: flex; flex-direction: column; height: 100vh; }
+        header { background: #1a1a1a; color: #fff; padding: 12px 16px; text-align: center; flex-shrink: 0; }
+        header h1 { font-size: 16px; margin: 0; line-height: 1.4; font-weight: 600; }
+        header p { font-size: 12px; color: #aaa; margin-top: 4px; }
+        
+        .actions { padding: 10px; text-align: center; background: #fff; border-bottom: 1px solid #eee; flex-shrink: 0; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .btn { display: inline-block; padding: 8px 20px; color: white; text-decoration: none; border-radius: 4px; font-size: 14px; white-space: nowrap; }
+        .btn-primary { background: #1677ff; }
+        .btn-secondary { background: #555; }
+        
+        /* 优化1: 回退提示样式 */
+        .fallback-tip { display: none; padding: 12px 16px; background: #fffbe6; color: #8c6e00; font-size: 13px; text-align: center; border-bottom: 1px solid #ffe58f; flex-shrink: 0; }
+        
+        iframe { flex-grow: 1; width: 100%; border: none; background: #fff; }
+        
+        @media (max-width: 600px) { 
+            header h1 { font-size: 14px; } 
+            .btn { padding: 8px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NeutronMP: Multi-Model Parallelism for Breaking Synchronization Barriers in Distributed GNN Training</h1>
+        <p>Chunyang Li, Xin Ai, Yanfeng Zhang | Northeastern University</p>
+    </header>
+    
+    <!-- 优化1: PDF加载失败时的回退提示 -->
+    <div class="fallback-tip" id="fallbackTip">
+        ⚠️ 若下方PDF显示空白，请点击上方按钮在新窗口阅读
+    </div>
+    
+    <div class="actions">
+        <!-- 优化2: 提供"新窗口打开"作为主力阅读方式，兼容所有手机浏览器 -->
+        <a class="btn btn-primary" href="paper.pdf" target="_blank" rel="noopener">📖 新窗口阅读</a>
+        <a class="btn btn-secondary" href="paper.pdf" download>📥 下载PDF</a>
+    </div>
+    
+    <iframe id="pdfViewer" src="paper.pdf" title="Paper Viewer"></iframe>
+
+    <script>
+        // 优化1: 简单检测iframe是否可能加载失败，显示回退提示
+        // 注意：由于跨域限制，无法精确判断PDF是否渲染成功，
+        // 这里采用延时显示提示的方式，让用户知道有备选方案
+        setTimeout(function() {
+            var tip = document.getElementById('fallbackTip');
+            if (tip) tip.style.display = 'block';
+        }, 3000);
+    </script>
+</body>
+</html>
