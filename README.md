@@ -119,7 +119,7 @@ CUDA_VISIBLE_DEVICES=0,1,2 python -m torch.distributed.run \
 | `--train_duration` | `1.0` | Wall-clock training window per submodel in seconds |
 | `--batch_size` | `1024` | Mini-batch size |
 | `--hidden_dim` | `256` | Hidden dimension of each submodel |
-| `--meta_epochs` | `20` | Training epochs of the integration unit |
+| `--meta_epochs` | `30` | Training epochs of the integration unit |
 | `--meta_hidden_dim` | `128` | Hidden dimension of the integration unit |
 | `--exact_fusion` | off | Run each submodel's full forward pass during embedding fusion |
 | `--enable_pruning` | off | Enable topology-aware submodel pruning |

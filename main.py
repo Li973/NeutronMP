@@ -38,7 +38,7 @@ def parse_args():
     parser.add_argument("--train_duration", type=float, default=1.0)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--hidden_dim", type=int, default=256)
-    parser.add_argument("--meta_epochs", type=int, default=20)
+    parser.add_argument("--meta_epochs", type=int, default=30)
     parser.add_argument("--meta_hidden_dim", type=int, default=128)
     parser.add_argument("--cleanup_embeddings", action="store_true")
     parser.add_argument("--exact_fusion", action="store_true")
