@@ -51,7 +51,7 @@ CUDA_VISIBLE_DEVICES=0,1,2 python -m torch.distributed.run \
   main.py \
   --dataset_name cora \
   --train_duration 1.0 \
-  --meta_epochs 20 \
+  --meta_epochs 30 \
   --batch_size 1024 \
   --hidden_dim 256
 ```
@@ -69,7 +69,7 @@ CUDA_VISIBLE_DEVICES=0,1,2 python -m torch.distributed.run \
   main.py \
   --dataset_name cora \
   --train_duration 1.0 \
-  --meta_epochs 20
+  --meta_epochs 30
 ```
 
 ### Multi-node (one process per node)
@@ -83,7 +83,7 @@ python -m torch.distributed.run \
   --node_rank=0 \
   --master_addr=<NODE0_IP> \
   --master_port=29500 \
-  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 20
+  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 30
 ```
 
 On the second node:
@@ -95,7 +95,7 @@ python -m torch.distributed.run \
   --node_rank=1 \
   --master_addr=<NODE0_IP> \
   --master_port=29500 \
-  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 20
+  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 30
 ```
 
 `<NODE0_IP>` is the reachable IP address of the first node. `--nproc_per_node` can be larger than one when a node has multiple GPUs.
@@ -107,7 +107,7 @@ Pruning activates local experts of each partition family plus globally important
 ```bash
 CUDA_VISIBLE_DEVICES=0,1,2 python -m torch.distributed.run \
   --nproc_per_node=3 --master_addr=127.0.0.1 --master_port=29500 \
-  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 20 \
+  main.py --dataset_name cora --train_duration 1.0 --meta_epochs 30 \
   --enable_pruning --num_families 2 --num_experts_per_node 2
 ```
 
