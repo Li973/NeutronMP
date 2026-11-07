@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.vscode/
+*.log
+
+# Datasets: only the cora files actually used by the code are tracked.
+# All other DGL/OGB graph binaries (~18G) stay out of the repository.
+dataset/*
+!dataset/cora_v2.zip
+!dataset/cora_v2_95e07a95/
+!dataset/cora_v2-as-nodepred/
